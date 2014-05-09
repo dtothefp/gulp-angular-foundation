@@ -42,12 +42,12 @@
                 <h3>Create A Module</h3>
                 <a href="#" data-dropdown="drop1" class="button dropdown">Dropdown Button</a><br>
                 <ul id="drop1" data-dropdown-content class="f-dropdown">
-                    <li ng-click="createModule('share-photo')">Share Photo</li>
-                    <li ng-click="createModule('share-video')">Share Video</li>
+                    <li ng-click="createModule('share-photo', 'sharePhotoController')">Share Photo</li>
+                    <li ng-click="createModule('share-video', 'shareVideoController')">Share Video</li>
                 </ul>
             </div>
             <div class="small-9 columns">
-                <div class="row" ui-sortable="sortableOptions" ng-model="modules">
+                <div class="row main-container" ui-sortable="sortableOptions" ng-model="modules">
                     <div ng-repeat="module in modules" class="small-6 columns sortables" id="sortable-{{$index}}">
                         <div dynamic-directive="module"></div>
                         <div resizer></div>
@@ -55,6 +55,14 @@
                 </div>
             </div>
         </div>
+
+        <!--<div class="row" ng-controller="SampleController">-->
+            <!--<div ng-repeat="thing in things" class="small-3 columns">-->
+                <!--<div id="sample-{{$index}}" class="{{thing.class}} ">-->
+                    <!--<h4>{{thing.title}}</h4>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
     <!-- inject:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>

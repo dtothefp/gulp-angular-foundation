@@ -11,8 +11,14 @@ gulp.task('sass', function() {
         gulp.src('./public/src/sass/app.scss'),
         gulp.src('./public/src/angular/**/*.scss')
     )
-        .pipe(sass({includePaths: ['./public/bower_components/foundation/scss']}))
         .pipe(concat('app.css'))
+        .pipe(sass({includePaths: [
+          './public/bower_components/foundation/scss',
+          './node_modules/node-bourbon/assets/stylesheets',
+          './public/bower_components/saffron/saffron'
+          ]
+        }))
+
         .pipe(gulp.dest('./public/build/css'))
         .on('error', handleErrors)
 });

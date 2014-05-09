@@ -40,8 +40,8 @@ app.controller('mainController', function($scope) {
 //        {title: "Eigth", directive: "share-photo", controller: "sharePhotoController"}
     ];
 
-    $scope.createModule = function(type) {
-        $scope.modules.push({directive: type});
+    $scope.createModule = function(directive, controller) {
+        $scope.modules.push({directive: directive, controller: controller});
     }
 
     $scope.sortableOptions = {

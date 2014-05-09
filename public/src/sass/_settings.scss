@@ -8,6 +8,13 @@
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
 
+$border-color: firebrick;
+
+@mixin makeBox($width: 100%, $height: 200px) {
+  width: $width;
+  height: $height;
+}
+
 // $experimental: true;
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)

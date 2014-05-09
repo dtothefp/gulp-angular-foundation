@@ -1,0 +1,23 @@
+#sample-0 {
+  @include dropIn(2s);
+  @include makeBox();
+}
+
+#sample-1 {
+  @include fadeInZoom();
+  @include makeBox(100px, 50px);
+}
+
+#sample-2 {
+  @include slideInRight();
+}
+
+#sample-3 {
+  @include popIn();
+}
+
+.sample {
+  @include makeBox();
+  border: 1px solid $border-color;
+  @include box-sizing(border-box);
+}

@@ -8,7 +8,8 @@
   "dependencies": {
     "express": "3.4.8",
     "jade": "*",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "node-bourbon": "~1.2.3"
   },
   "devDependencies": {
     "gulp-changed": "~0.3.0",

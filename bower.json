@@ -19,8 +19,9 @@
     "angular-ui-router": "~0.2.10",
     "foundation": "~5.2.2",
     "angular-resource": "~1.2.16",
-    "angular-ui-sortable": "~0.12.6",
-    "kendo-ui": "git://github.com/dtothefp/kendo_build"
+    "bourbon": "~4.0.1",
+    "saffron": "~0.2.2",
+    "angular-ui-sortable": "~0.12.6"
   },
   "overrides": {
     "angular": {

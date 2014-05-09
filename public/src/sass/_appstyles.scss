@@ -24,6 +24,7 @@
 
 .sortables {
   border: 1px solid black;
+  @include dropIn();
 }
 
 [class*="column"] + [class*="column"]:last-child {
