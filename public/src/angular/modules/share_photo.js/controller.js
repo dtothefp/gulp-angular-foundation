@@ -3,5 +3,4 @@ app.controller('sharePhotoController', function($scope) {
         title: "Share Photo Title",
         description: "Module Description"
     }
-    debugger;
 });
