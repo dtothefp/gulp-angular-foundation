@@ -1,34 +1,16 @@
 {
-  "name": "gulp-starter",
-  "version": "0.1.0",
-  "description": "Gulp starter with common tasks and scenarios",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/greypants/gulp-starter.git"
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
   },
-  "browser": {
-    "plugin": "./src/javascript/vendor/jquery-plugin.js"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim",
-      "coffeeify",
-      "hbsfy"
-    ]
-  },
-  "browserify-shim": {
-    "plugin": {
-      "exports": "plugin",
-      "depends": [
-        "jquery:$"
-      ]
-    }
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "*",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
-    "browserify-shim": "~3.4.1",
-    "browserify": "~3.36.0",
-    "coffeeify": "~0.6.0",
-    "connect": "~2.14.3",
     "gulp-changed": "~0.3.0",
     "gulp-imagemin": "~0.1.5",
     "gulp-livereload": "~1.2.0",
@@ -41,9 +23,13 @@
     "gulp-concat": "~2.2.0",
     "gulp-rename": "~1.2.0",
     "gulp-ngmin": "~0.3.0",
-    "gulp-jshint": "~1.5.5"
-  },
-  "dependencies": {
-    "jquery": "~2.1.0"
+    "gulp-jshint": "~1.5.5",
+    "event-stream": "~3.1.5",
+    "gulp-inject": "~0.4.1",
+    "gulp-bower-files": "~0.2.2",
+    "streamqueue": "0.0.7",
+    "gulp-order": "~1.0.6",
+    "gulp-nodemon": "~1.0.2",
+    "bower-files": "~1.1.1"
   }
 }

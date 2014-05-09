@@ -1,6 +1,6 @@
 var path = require('path');
 
 module.exports = {
-	port: '8080',
+	port: '3000',
 	root: path.resolve('./')
 };

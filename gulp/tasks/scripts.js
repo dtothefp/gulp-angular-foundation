@@ -1,25 +1,23 @@
 var gulp         = require('gulp');
 var concat       = require('gulp-concat');
-var livereload   = require('gulp-livereload');
 var notify       = require('gulp-notify');
 var handleErrors = require('../util/handleErrors');
-var jshint     = require('gulp-jshint');
-var ngmin      = require('gulp-ngmin');
-
-// gulp.task('scripts', function() {
-//     gulp.src(['./src/config/{,**/}.*js', './src/services/{,**/}*.js', './src/modules/**/*.js', './src/primitives/**/*.js'])
-//         .pipe(gulp.dest('./build/js'))
-//         .on('error', handleErrors)
-//         .pipe(livereload());
-// });
+var jshint       = require('gulp-jshint');
+var ngmin        = require('gulp-ngmin');
+var order        = require('gulp-order');
+var es           = require('event-stream');
+var streamqueue  = require('streamqueue');
 
 gulp.task('scripts', function() {
-    return gulp.src(['./src/config/{,**/}*.js', './src/services/{,**/}*.js', './src/modules/**/*.js', './src/primitives/**/*.js'])
-        //.pipe(jshint())
-        //.pipe(jshint.reporter('default'))
+    return streamqueue({ objectMode: true },
+        gulp.src('./public/src/angular/config/config.js'),
+        gulp.src(['./public/src/angular/config/global/**/*.js']),
+        gulp.src('./public/src/angular/services/**/*.js'),
+        gulp.src('./public/src/angular/modules/**/*.js'),
+        gulp.src('./public/src/angular/primitives/**/*.js'),
+        gulp.src('./public/src/js/**/*.js')
+    )
         .pipe(concat('app.js'))
-        //.pipe(ngmin({dynamic: true}))
-        .pipe(gulp.dest('./build/js'))
-        .on('error', handleErrors)
-        .pipe(livereload());
+        .pipe(gulp.dest('./public/build/js'))
+        .on('error', handleErrors);
 });

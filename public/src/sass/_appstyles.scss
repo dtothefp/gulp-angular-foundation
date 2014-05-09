@@ -1,0 +1,40 @@
+/***CUSTOM APP STYLES ***/
+
+.on-drag-enter{
+    background-color : #aaaaaa;
+}
+
+.drop-zone {
+  width: 500px;
+  height: 500px;
+}
+
+.drag-zone {
+  width: 300px;
+  height: 300px;
+}
+
+.drag-zone {
+  border: 2px solid red;
+}
+
+.drop-zone {
+  border: 2px solid green;
+}
+
+.sortables {
+  border: 1px solid black;
+}
+
+[class*="column"] + [class*="column"]:last-child {
+  float: left;
+}
+
+.f-dropdown li {
+  padding: 0.5rem;
+  color: #555;
+}
+
+.new {
+  color: blue;
+}

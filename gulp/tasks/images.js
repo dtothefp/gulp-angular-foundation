@@ -4,9 +4,9 @@ var imagemin   = require('gulp-imagemin');
 var livereload = require('gulp-livereload');
 
 gulp.task('images', function() {
-	var dest = './build/images';
+	var dest = './public/build/images';
 
-	return gulp.src('./src/images/**')
+	return gulp.src('./public/src/images/**')
 		.pipe(changed(dest)) // Ignore unchanged files
 		.pipe(imagemin()) // Optimize
 		.pipe(gulp.dest(dest));
