@@ -3,6 +3,8 @@
   <ul>
       <li ng-click="createModule('share_photo')" class="button">Share Photo</li>
       <li ng-click="createModule('share_video')" class="button">Share Video</li>
+      <li ng-click="logTemplates()" class="button">Console Log Templates</li>
+      <li ng-click="clearTemplates" class="button">Clear Templates</li>
   </ul>
   <div class="wrapper" gridster="gridsterOpts">
     <div ng-repeat="template in templates" append-template template="template" gridster-item="template"></div>
