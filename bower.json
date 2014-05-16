@@ -21,7 +21,8 @@
     "angular-resource": "~1.2.16",
     "bourbon": "~4.0.1",
     "saffron": "~0.2.2",
-    "angular-ui-sortable": "~0.12.6"
+    "angular-ui-sortable": "~0.12.6",
+    "angular-gridster": "~0.9.8"
   },
   "overrides": {
     "angular": {

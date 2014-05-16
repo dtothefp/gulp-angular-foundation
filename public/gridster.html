@@ -1,0 +1,30 @@
+<div ng-controller="GridsterPracticController" class="row">
+  <h1>Dynamically Generate Modules</h1>
+  <ul>
+      <li ng-click="createModule('share_photo')" class="button">Share Photo</li>
+      <li ng-click="createModule('share_video')" class="button">Share Video</li>
+  </ul>
+  <div class="wrapper" gridster="gridsterOpts">
+    <div ng-repeat="template in templates" append-template template="template" gridster-item="template"></div>
+  </div>
+
+  <!-- attempt to add the gridster-item directive inside of the addTemplateDirective -->
+  <!-- <div ng-repeat="template in templates" append-template template="template"></div> -->
+
+  <h1>Enter a string of HTML</h1>
+  <input type="text" ng-model="html">
+  <div class="button" ng-click="addHtml()">Add HTML</div>
+  <div class="button" ng-click="clearHtml()">Clear Elements</div>
+
+   <div class="wrapper" gridster="gridsterOpts">
+       <div ng-repeat="element in elements" append-html template="element" gridster-item="element"></div>
+       <!-- <div ng-repeat="element in elements" append-html template="element"></div> -->
+    </div>
+
+  <h1>Standard Gridster Example</h1>
+  <div gridster>
+      <ul>
+          <li gridster-item="item" ng-repeat="item in standardItems"></li>
+      </ul>
+  </div>
+</div>

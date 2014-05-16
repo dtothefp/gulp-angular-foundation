@@ -27,10 +27,6 @@
   @include dropIn();
 }
 
-[class*="column"] + [class*="column"]:last-child {
-  float: left;
-}
-
 .f-dropdown li {
   padding: 0.5rem;
   color: #555;
