@@ -1,4 +1,4 @@
-app.controller("GridsterPracticController", function($scope, TemplateService) {
+app.controller("GridsterPracticController", function($scope, TemplateService, $rootScope, $compile) {
   $scope.message = "Gridster";
 
   $scope.standardItems = [
@@ -63,7 +63,17 @@ app.controller("GridsterPracticController", function($scope, TemplateService) {
     $scope.templates = [];
     $scope.createModule = function(slug) {
       TemplateService.getTemplate(slug).then(function(data) {
-        $scope.templates.push(data.data);
+        var compiled = $compile(data.data)($rootScope);
+        compiled.attr("id", Math.random());
+        $scope.templates.push(compiled);
       });
+    }
+
+    $scope.logTemplates = function() {
+      console.log($scope.templates);
+    }
+
+    $scope.clearTemplates = function() {
+      $scope.templates = [];
     }
 });
