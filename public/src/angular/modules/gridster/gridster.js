@@ -30,14 +30,18 @@ app.controller("GridsterPracticController", function($scope, TemplateService) {
       mobileBreakPoint: 600, // if the screen is not wider that this, remove the grid layout and stack the items
       resizable: {
          enabled: true,
-         start: function(event, uiWidget, $element) {}, // optional callback fired when resize is started,
+         start: function(event, uiWidget, $element) {
+          console.log("resize start");
+         }, // optional callback fired when resize is started,
          resize: function(event, uiWidget, $element) {}, // optional callback fired when item is resized,
          stop: function(event, uiWidget, $element) {} // optional callback fired when item is finished resizing
       },
       draggable: {
          enabled: true, // whether dragging items is supported
          //handle: '.gridster-item', // optional selector for resize handle
-         start: function(event, uiWidget, $element) {}, // optional callback fired when drag is started,
+         start: function(event, uiWidget, $element) {
+          console.log("drag start");
+         }, // optional callback fired when drag is started,
          drag: function(event, uiWidget, $element) {}, // optional callback fired when item is moved,
          stop: function(event, uiWidget, $element) {} // optional callback fired when item is finished dragging
       }
